@@ -2,16 +2,6 @@
 class Admin_Model extends CI_Model 
 {
 
-
-  function save_user()
-  {
-      $data = array('username' => $this->input->post('username'), 'password' => $this->input->post('password'),'active_status' => 0, 'delete_status' =>0);
-      if($data != "")
-      {
-          $this->db->insert('user',$data);
-      }
-  }
-
 //************************************************ COLLEGE DATA TABLE *******************************************************
 
       var $table = "college";  
