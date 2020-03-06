@@ -1331,11 +1331,11 @@ class Admin extends CI_Controller
 
 				}
 
+				
 				if($proceed ==true)
 				{
-					$objPHPExcel->getActiveSheet()->SetCellValue($alpha[$pos].$x,$row->attendance_morning);
+					$objPHPExcel->getActiveSheet()->SetCellValue($alpha[$pos].$x,$value->attendance_morning);
 				}
-				
 
 				
 				
@@ -1344,8 +1344,9 @@ class Admin extends CI_Controller
 			
 		}
 
+		$course_namee = $this->Admin_Model->get_course($course_id,'course');
 
-		$filename="Attendance Sheet - "."hai".'.xlsx';
+		$filename="Attendance Sheet - ".$course_namee[0]->course_name." ".$from." - ".$to.'.xlsx';
 		$objPHPExcel->getActiveSheet()->setTitle("Attendance");
 
 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

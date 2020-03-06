@@ -20,7 +20,7 @@
       <div class="form-group">
         <label for="name">Code</label>
         <input type="text" name="collegecode" value="<?php echo $college[0]->college_code;?>" id="collegecode" class="form-control required" placeholder="Enter Student ID" >
-        <input type="hidden" name="college_id" id="college_id" value="<?php echo $college[0]->id;?>">
+        <input type="hidden" name="college_id" id="college_id" value="<?php if(isset($college[0]->id)){ echo $college[0]->id; }?>">
         <span id="iderror" class="text-danger"></span>
       </div>
       <div class="form-group">

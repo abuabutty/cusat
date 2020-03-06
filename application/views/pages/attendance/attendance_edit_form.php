@@ -5,11 +5,11 @@
 		<div class="card-header">
 			<div class="row">
 				<div class="col-md-9"><h3>Course List</h3></div>
-				<div class="col-md-9"><h8>Attendance on <?php echo $attendance[0]->date;?></h8></div>
-				<div class="col-md-9"><h8>Course: <?php echo $course[0]->course_name;?></h8></div>
+				<div class="col-md-9"><h8>Attendance on <?php if(isset($attendance[0]->date)){ echo $attendance[0]->date;}?></h8></div>
+				<div class="col-md-9"><h8>Course: <?php if(isset($course[0]->course_name)){ echo $course[0]->course_name;}?></h8></div>
 				<div class="col-md-3" align="right">
-					<input type="hidden" name="course_id" id="course_id" value="<?php echo $course[0]->id;?>">
-					<input type="hidden" name="date" id="date" value="<?php echo $attendance[0]->date;?>">
+					<input type="hidden" name="course_id" id="course_id" value="<?php if(isset($course[0]->id)){ echo $course[0]->id; }?>">
+					<input type="hidden" name="date" id="date" value="<?php if(isset($attendance[0]->date)){ echo $attendance[0]->date; }?>">
 					<span><input type="submit" name="save" id="save" value="Save" class="btn btn-primary"></span>
 				</div>
 			</div>
